@@ -18,7 +18,7 @@ RUN yum install -y $REPO_URL \
   && yum install -y percona-xtrabackup-24 nmap curl vim \
   && yum clean all -y && rm -rf /var/cache/yum
 
-RUN mkdir -p /backup && chown -R 1001 /backup && chgrp -R 0 /backup && chmod -R g=u /backup
+RUN mkdir -p /backup && chown -R 1001 /backup && chgrp -R 0 /backup && chmod -R g=u /backup && chmod -R 777 /backup
 
 ADD backup.sh /usr/bin/
 
